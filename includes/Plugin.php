@@ -43,9 +43,10 @@ final class Plugin
 
         Settings::register();
         OrderHandler::register();
+        ThankYouHandler::register();
+        WebhookReceiver::register();
 
         // Future iterations:
-        //  - WebhookReceiver::register()
         //  - ProductMeta::register()
     }
 
