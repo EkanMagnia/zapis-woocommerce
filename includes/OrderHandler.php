@@ -48,11 +48,24 @@ final class OrderHandler
 
         // Offline gateways (Cash on Delivery, Cheque, Bank Transfer) skip the
         // 'payment_complete' hook entirely and go straight to 'processing'.
+        // The status hook also passes the in-memory $order object as its 2nd
+        // argument — we prefer it over re-reading from DB because billing meta
+        // may not be flushed yet during checkout.
         // Idempotency guard in handlePaymentComplete prevents duplicate POSTs.
-        add_action('woocommerce_order_status_processing', [self::class, 'onPaymentComplete']);
+        add_action('woocommerce_order_status_processing', [self::class, 'onStatusProcessing'], 10, 2);
     }
 
     public static function onPaymentComplete(int $orderId): void
+    {
+        self::dispatch($orderId, null);
+    }
+
+    public static function onStatusProcessing(int $orderId, $order = null): void
+    {
+        self::dispatch($orderId, $order instanceof \WC_Order ? $order : null);
+    }
+
+    private static function dispatch(int $orderId, ?\WC_Order $order): void
     {
         if (! Settings::isConfigured()) {
             return;
@@ -61,12 +74,12 @@ final class OrderHandler
         $client = new ApiClient(Settings::getApiKey(), Settings::getApiBaseUrl());
         $resolver = [ProductMeta::class, 'resolveForOrder'];
 
-        (new self($client, $resolver))->handlePaymentComplete($orderId);
+        (new self($client, $resolver))->handlePaymentComplete($orderId, $order);
     }
 
-    public function handlePaymentComplete(int $orderId): void
+    public function handlePaymentComplete(int $orderId, ?\WC_Order $order = null): void
     {
-        $order = wc_get_order($orderId);
+        $order = $order ?: wc_get_order($orderId);
         if (! $order instanceof \WC_Order) {
             return;
         }
