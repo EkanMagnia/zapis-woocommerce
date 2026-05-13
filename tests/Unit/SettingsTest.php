@@ -106,8 +106,8 @@ class SettingsTest extends TestCase
 
     public function test_sanitize_api_base_url_accepts_https(): void
     {
-        $this->assertSame('https://zapis.app', Settings::sanitizeApiBaseUrl('https://zapis.app/'));
-        $this->assertSame('https://staging.zapis.app', Settings::sanitizeApiBaseUrl('  https://staging.zapis.app/  '));
+        $this->assertSame('https://zapis.io', Settings::sanitizeApiBaseUrl('https://zapis.io/'));
+        $this->assertSame('https://staging.zapis.io', Settings::sanitizeApiBaseUrl('  https://staging.zapis.io/  '));
     }
 
     public function test_sanitize_api_base_url_rejects_invalid_scheme(): void
@@ -155,7 +155,7 @@ class SettingsTest extends TestCase
             ->with(Settings::OPTION_API_BASE_URL, '')
             ->andReturn('');
 
-        $this->assertSame('https://zapis.app', Settings::getApiBaseUrl());
+        $this->assertSame('https://zapis.io', Settings::getApiBaseUrl());
     }
 
     public function test_is_configured_true_when_key_and_offer_set(): void

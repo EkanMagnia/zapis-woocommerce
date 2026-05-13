@@ -2,13 +2,13 @@
 
 /**
  * Plugin Name:       Zapis for WooCommerce
- * Plugin URI:        https://zapis.app
+ * Plugin URI:        https://zapis.io
  * Description:       Cere clientului să semneze electronic un contract după plată, direct din WooCommerce. Trimite datele comenzii la Zapis, redirecționează clientul către semnătură, marchează comanda completă pe webhook.
  * Version:           0.1.0
  * Requires at least: 6.0
  * Requires PHP:      7.4
  * Author:            Zapis
- * Author URI:        https://zapis.app
+ * Author URI:        https://zapis.io
  * License:           GPL v2 or later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       zapis-woocommerce

@@ -2,7 +2,7 @@
 
 > Cere clientului să semneze electronic un contract după plată, direct din WooCommerce.
 
-Plugin oficial care conectează magazinul tău WooCommerce cu [Zapis](https://zapis.app) — platforma de contracte electronice. După plată, clientul este redirecționat să semneze contractul; pe semnătură, comanda se finalizează automat prin webhook.
+Plugin oficial care conectează magazinul tău WooCommerce cu [Zapis](https://zapis.io) — platforma de contracte electronice. După plată, clientul este redirecționat să semneze contractul; pe semnătură, comanda se finalizează automat prin webhook.
 
 ---
 
@@ -34,7 +34,7 @@ Dacă magazinul tău vinde:
 - WordPress 6.0+
 - WooCommerce 8.0+
 - PHP 7.4+
-- Un cont activ pe [Zapis](https://zapis.app) cu cel puțin o ofertă publicată
+- Un cont activ pe [Zapis](https://zapis.io) cu cel puțin o ofertă publicată
 
 ## Instalare
 
@@ -83,7 +83,7 @@ Edit Product → tab **General** → câmp **Zapis Offer UUID**. Lasă gol pentr
 
 ### Custom Zapis base URL
 
-Pentru staging sau instanțe self-hosted: **Zapis Contracts** → **Avansat** → **Zapis Base URL**. Default: `https://zapis.app`.
+Pentru staging sau instanțe self-hosted: **Zapis Contracts** → **Avansat** → **Zapis Base URL**. Default: `https://zapis.io`.
 
 ### Idempotency
 
@@ -178,5 +178,5 @@ GPL v2 sau mai nou. Liber de folosit, modificat, distribuit.
 ## Suport
 
 - 🐛 Bug-uri: [GitHub Issues](https://github.com/EkanMagnia/zapis-woocommerce/issues)
-- 📧 Suport tenant: suport@zapis.app
-- 📚 Documentație Zapis: [docs.zapis.app](https://zapis.app/docs)
+- 📧 Suport tenant: suport@zapis.io
+- 📚 Documentație Zapis: [docs.zapis.io](https://zapis.io/docs)

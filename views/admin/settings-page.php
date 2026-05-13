@@ -81,7 +81,7 @@ if (! defined('ABSPATH')) {
                     <input type="url" id="zapis_wc_api_base_url" name="<?php echo esc_attr(\Zapis\WooCommerce\Settings::OPTION_API_BASE_URL); ?>"
                            value="<?php echo esc_attr($apiBaseUrl === \Zapis\WooCommerce\Settings::DEFAULT_API_BASE_URL ? '' : $apiBaseUrl); ?>"
                            class="regular-text" placeholder="<?php echo esc_attr(\Zapis\WooCommerce\Settings::DEFAULT_API_BASE_URL); ?>">
-                    <p class="description"><?php esc_html_e('Lasă gol pentru producție (https://zapis.app). Setează doar pentru staging / instalare custom.', 'zapis-woocommerce'); ?></p>
+                    <p class="description"><?php esc_html_e('Lasă gol pentru producție (https://zapis.io). Setează doar pentru staging / instalare custom.', 'zapis-woocommerce'); ?></p>
                 </td>
             </tr>
         </table>

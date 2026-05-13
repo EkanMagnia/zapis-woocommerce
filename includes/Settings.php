@@ -20,7 +20,7 @@ final class Settings
 
     public const MENU_SLUG = 'zapis-contracts';
 
-    public const DEFAULT_API_BASE_URL = 'https://zapis.app';
+    public const DEFAULT_API_BASE_URL = 'https://zapis.io';
 
     public static function register(): void
     {
