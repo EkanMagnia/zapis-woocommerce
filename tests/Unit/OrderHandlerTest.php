@@ -78,6 +78,21 @@ class OrderHandlerTest extends TestCase
         return $order;
     }
 
+    // ── register hooks ──
+
+    public function test_register_hooks_both_payment_complete_and_status_processing(): void
+    {
+        $hooks = [];
+        Functions\when('add_action')->alias(function ($hook) use (&$hooks) {
+            $hooks[] = $hook;
+        });
+
+        \Zapis\WooCommerce\OrderHandler::register();
+
+        $this->assertContains('woocommerce_payment_complete', $hooks);
+        $this->assertContains('woocommerce_order_status_processing', $hooks);
+    }
+
     // ── buildPayload (pure data mapping) ──
 
     public function test_build_payload_maps_billing_data_and_external_order_id(): void

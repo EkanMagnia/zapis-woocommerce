@@ -43,7 +43,13 @@ final class OrderHandler
 
     public static function register(): void
     {
+        // Online gateways (Stripe, PayPal) fire this hook when payment clears.
         add_action('woocommerce_payment_complete', [self::class, 'onPaymentComplete']);
+
+        // Offline gateways (Cash on Delivery, Cheque, Bank Transfer) skip the
+        // 'payment_complete' hook entirely and go straight to 'processing'.
+        // Idempotency guard in handlePaymentComplete prevents duplicate POSTs.
+        add_action('woocommerce_order_status_processing', [self::class, 'onPaymentComplete']);
     }
 
     public static function onPaymentComplete(int $orderId): void
