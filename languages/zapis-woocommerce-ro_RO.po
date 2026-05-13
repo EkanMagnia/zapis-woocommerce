@@ -1,0 +1,111 @@
+# Romanian translation for Zapis for WooCommerce
+msgid ""
+msgstr ""
+"Project-Id-Version: Zapis for WooCommerce 0.1.0\n"
+"Report-Msgid-Bugs-To: https://github.com/EkanMagnia/zapis-woocommerce/issues\n"
+"PO-Revision-Date: 2026-05-13 12:00+0000\n"
+"Language: ro_RO\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < 20)) ? 1 : 2);\n"
+"X-Domain: zapis-woocommerce\n"
+
+msgid "Zapis for WooCommerce requires WooCommerce to be installed and active."
+msgstr "Zapis pentru WooCommerce necesită WooCommerce instalat și activ."
+
+msgid "Zapis Contracts"
+msgstr "Contracte Zapis"
+
+msgid "You do not have permission to view this page."
+msgstr "Nu ai permisiunea să accesezi această pagină."
+
+msgid "Zapis: no offer UUID resolved for this order; signing skipped."
+msgstr "Zapis: nu s-a putut determina UUID-ul ofertei pentru această comandă; semnătură ignorată."
+
+msgid "Zapis API authentication failed (check your API key). Error: %s"
+msgstr "Autentificare Zapis API eșuată (verifică API key-ul). Eroare: %s"
+
+msgid "Zapis API rejected order data: %s"
+msgstr "Zapis API a respins datele comenzii: %s"
+
+msgid "Zapis API error: %s"
+msgstr "Eroare Zapis API: %s"
+
+msgid "Zapis: contract sent for signing. URL: %s"
+msgstr "Zapis: contractul a fost trimis pentru semnare. URL: %s"
+
+msgid "One last step — sign your contract"
+msgstr "Un ultim pas — semnează contractul"
+
+msgid "To complete your order we need your electronic signature on the contract. It takes under a minute."
+msgstr "Pentru a finaliza comanda avem nevoie de semnătura ta electronică pe contract. Durează sub un minut."
+
+msgid "Sign contract now"
+msgstr "Semnează contractul acum"
+
+msgid "Action required: please sign the contract for this order at the link below."
+msgstr "Acțiune necesară: te rugăm să semnezi contractul pentru această comandă accesând link-ul de mai jos."
+
+msgid "Contract signed via Zapis. Order completed automatically."
+msgstr "Contract semnat prin Zapis. Comanda a fost finalizată automat."
+
+msgid "Zapis Contract"
+msgstr "Contract Zapis"
+
+msgid "No contract has been sent for signing on this order."
+msgstr "Niciun contract n-a fost trimis spre semnare pe această comandă."
+
+msgid "Status"
+msgstr "Status"
+
+msgid "Submission"
+msgstr "Submission"
+
+msgid "Signing link"
+msgstr "Link semnare"
+
+msgid "Open in new tab →"
+msgstr "Deschide în tab nou →"
+
+msgid "Expires at"
+msgstr "Expiră la"
+
+msgid "Signed PDF"
+msgstr "PDF semnat"
+
+msgid "Download →"
+msgstr "Descarcă →"
+
+msgid "Resend signing email to customer"
+msgstr "Retrimite email-ul de semnare către client"
+
+msgid "Insufficient permissions."
+msgstr "Permisiuni insuficiente."
+
+msgid "Please sign your contract"
+msgstr "Te rugăm să semnezi contractul"
+
+msgid "To finalise your order please sign the contract here:\n\n%s"
+msgstr "Pentru a finaliza comanda, semnează contractul aici:\n\n%s"
+
+msgid "Zapis: signing email resent to customer (manual)."
+msgstr "Zapis: email-ul de semnare a fost retrimis manual către client."
+
+msgid "Pending signature"
+msgstr "În așteptare"
+
+msgid "Signed"
+msgstr "Semnat"
+
+msgid "Cancelled"
+msgstr "Anulat"
+
+msgid "Unknown"
+msgstr "Necunoscut"
+
+msgid "Zapis Offer UUID"
+msgstr "UUID ofertă Zapis"
+
+msgid "Optional: override the default Zapis offer UUID for this product. Leave empty to use the global default."
+msgstr "Opțional: înlocuiește UUID-ul ofertei Zapis pentru acest produs. Lasă gol pentru a folosi default-ul global."

@@ -35,6 +35,12 @@ final class Plugin
 
     public static function onPluginsLoaded(): void
     {
+        load_plugin_textdomain(
+            'zapis-woocommerce',
+            false,
+            dirname(plugin_basename(self::pluginFile())) . '/languages/'
+        );
+
         if (! self::isWooCommerceActive()) {
             add_action('admin_notices', [self::class, 'renderWooCommerceMissingNotice']);
 

@@ -1,0 +1,144 @@
+# Copyright (C) 2026 Zapis
+# This file is distributed under the GPL-2.0-or-later license.
+msgid ""
+msgstr ""
+"Project-Id-Version: Zapis for WooCommerce 0.1.0\n"
+"Report-Msgid-Bugs-To: https://github.com/EkanMagnia/zapis-woocommerce/issues\n"
+"POT-Creation-Date: 2026-05-13T12:00:00+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: WP-CLI 2.10.0\n"
+"X-Domain: zapis-woocommerce\n"
+
+#: includes/Plugin.php
+msgid "Zapis for WooCommerce requires WooCommerce to be installed and active."
+msgstr ""
+
+#: includes/Settings.php
+msgid "Zapis Contracts"
+msgstr ""
+
+#: includes/Settings.php
+msgid "You do not have permission to view this page."
+msgstr ""
+
+#: includes/OrderHandler.php
+msgid "Zapis: no offer UUID resolved for this order; signing skipped."
+msgstr ""
+
+#: includes/OrderHandler.php
+msgid "Zapis API authentication failed (check your API key). Error: %s"
+msgstr ""
+
+#: includes/OrderHandler.php
+msgid "Zapis API rejected order data: %s"
+msgstr ""
+
+#: includes/OrderHandler.php
+msgid "Zapis API error: %s"
+msgstr ""
+
+#: includes/OrderHandler.php
+msgid "Zapis: contract sent for signing. URL: %s"
+msgstr ""
+
+#: includes/ThankYouHandler.php
+msgid "One last step — sign your contract"
+msgstr ""
+
+#: includes/ThankYouHandler.php
+msgid "To complete your order we need your electronic signature on the contract. It takes under a minute."
+msgstr ""
+
+#: includes/ThankYouHandler.php
+msgid "Sign contract now"
+msgstr ""
+
+#: includes/ThankYouHandler.php
+msgid "Action required: please sign the contract for this order at the link below."
+msgstr ""
+
+#: includes/WebhookReceiver.php
+msgid "Contract signed via Zapis. Order completed automatically."
+msgstr ""
+
+#: includes/AdminMetaBox.php
+msgid "Zapis Contract"
+msgstr ""
+
+#: includes/AdminMetaBox.php
+msgid "No contract has been sent for signing on this order."
+msgstr ""
+
+#: includes/AdminMetaBox.php
+msgid "Status"
+msgstr ""
+
+#: includes/AdminMetaBox.php
+msgid "Submission"
+msgstr ""
+
+#: includes/AdminMetaBox.php
+msgid "Signing link"
+msgstr ""
+
+#: includes/AdminMetaBox.php
+msgid "Open in new tab →"
+msgstr ""
+
+#: includes/AdminMetaBox.php
+msgid "Expires at"
+msgstr ""
+
+#: includes/AdminMetaBox.php
+msgid "Signed PDF"
+msgstr ""
+
+#: includes/AdminMetaBox.php
+msgid "Download →"
+msgstr ""
+
+#: includes/AdminMetaBox.php
+msgid "Resend signing email to customer"
+msgstr ""
+
+#: includes/AdminMetaBox.php
+msgid "Insufficient permissions."
+msgstr ""
+
+#: includes/AdminMetaBox.php
+msgid "Please sign your contract"
+msgstr ""
+
+#: includes/AdminMetaBox.php
+msgid "To finalise your order please sign the contract here:\n\n%s"
+msgstr ""
+
+#: includes/AdminMetaBox.php
+msgid "Zapis: signing email resent to customer (manual)."
+msgstr ""
+
+#: includes/AdminMetaBox.php
+msgid "Pending signature"
+msgstr ""
+
+#: includes/AdminMetaBox.php
+msgid "Signed"
+msgstr ""
+
+#: includes/AdminMetaBox.php
+msgid "Cancelled"
+msgstr ""
+
+#: includes/AdminMetaBox.php
+msgid "Unknown"
+msgstr ""
+
+#: includes/ProductMeta.php
+msgid "Zapis Offer UUID"
+msgstr ""
+
+#: includes/ProductMeta.php
+msgid "Optional: override the default Zapis offer UUID for this product. Leave empty to use the global default."
+msgstr ""
