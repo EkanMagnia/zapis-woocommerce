@@ -16,7 +16,7 @@ use Zapis\WooCommerce\Http\WordPressHttpClient;
  * Client for the Zapis public REST API (v1). Pure PHP — receives an
  * HttpClientInterface so it can be unit-tested without WordPress.
  */
-final class ApiClient
+class ApiClient
 {
     private string $apiKey;
     private string $baseUrl;
