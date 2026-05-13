@@ -43,15 +43,17 @@ final class OrderHandler
 
     public static function register(): void
     {
-        // Online gateways (Stripe, PayPal) fire this hook when payment clears.
+        // Fires after WC has fully persisted billing + line items, regardless
+        // of gateway. Earliest reliable point for triggering the Zapis call.
+        add_action('woocommerce_checkout_order_processed', [self::class, 'onCheckoutOrderProcessed'], 10, 3);
+
+        // Safety net for orders created outside the standard checkout (admin
+        // manual orders, REST API, subscription renewals) — online gateways.
         add_action('woocommerce_payment_complete', [self::class, 'onPaymentComplete']);
 
-        // Offline gateways (Cash on Delivery, Cheque, Bank Transfer) skip the
-        // 'payment_complete' hook entirely and go straight to 'processing'.
-        // The status hook also passes the in-memory $order object as its 2nd
-        // argument — we prefer it over re-reading from DB because billing meta
-        // may not be flushed yet during checkout.
-        // Idempotency guard in handlePaymentComplete prevents duplicate POSTs.
+        // Safety net for offline gateways (COD, Cheque, BACS) when neither
+        // of the hooks above fire. Idempotency-Key in handle prevents
+        // duplicate submissions across hooks for the same order.
         add_action('woocommerce_order_status_processing', [self::class, 'onStatusProcessing'], 10, 2);
     }
 
@@ -61,6 +63,11 @@ final class OrderHandler
     }
 
     public static function onStatusProcessing(int $orderId, $order = null): void
+    {
+        self::dispatch($orderId, $order instanceof \WC_Order ? $order : null);
+    }
+
+    public static function onCheckoutOrderProcessed(int $orderId, array $postedData = [], $order = null): void
     {
         self::dispatch($orderId, $order instanceof \WC_Order ? $order : null);
     }
