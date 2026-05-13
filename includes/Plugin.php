@@ -41,8 +41,9 @@ final class Plugin
             return;
         }
 
-        // Subsystems registered in later iterations:
-        //  - Settings::register()
+        Settings::register();
+
+        // Future iterations:
         //  - OrderHandler::register()
         //  - WebhookReceiver::register()
         //  - ProductMeta::register()
