@@ -43,8 +43,11 @@ final class OrderHandler
 
     public static function register(): void
     {
-        // Fires after WC has fully persisted billing + line items, regardless
-        // of gateway. Earliest reliable point for triggering the Zapis call.
+        // Block-based checkout (default in WC 8+) — Store API. Single arg
+        // is the WC_Order, billing/meta fully flushed by the time we get it.
+        add_action('woocommerce_store_api_checkout_order_processed', [self::class, 'onStoreApiOrderProcessed']);
+
+        // Classic shortcode-based checkout. Fires after billing persisted.
         add_action('woocommerce_checkout_order_processed', [self::class, 'onCheckoutOrderProcessed'], 10, 3);
 
         // Safety net for orders created outside the standard checkout (admin
@@ -55,6 +58,14 @@ final class OrderHandler
         // of the hooks above fire. Idempotency-Key in handle prevents
         // duplicate submissions across hooks for the same order.
         add_action('woocommerce_order_status_processing', [self::class, 'onStatusProcessing'], 10, 2);
+    }
+
+    public static function onStoreApiOrderProcessed($order): void
+    {
+        if (! $order instanceof \WC_Order) {
+            return;
+        }
+        self::dispatch($order->get_id(), $order);
     }
 
     public static function onPaymentComplete(int $orderId): void
