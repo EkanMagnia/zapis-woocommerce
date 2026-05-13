@@ -53,7 +53,7 @@ final class OrderHandler
         }
 
         $client = new ApiClient(Settings::getApiKey(), Settings::getApiBaseUrl());
-        $resolver = fn (\WC_Order $order): string => Settings::getDefaultOfferUuid();
+        $resolver = [ProductMeta::class, 'resolveForOrder'];
 
         (new self($client, $resolver))->handlePaymentComplete($orderId);
     }

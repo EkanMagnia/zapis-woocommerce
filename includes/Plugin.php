@@ -45,9 +45,8 @@ final class Plugin
         OrderHandler::register();
         ThankYouHandler::register();
         WebhookReceiver::register();
-
-        // Future iterations:
-        //  - ProductMeta::register()
+        AdminMetaBox::register();
+        ProductMeta::register();
     }
 
     public static function isWooCommerceActive(): bool
