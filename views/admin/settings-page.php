@@ -7,6 +7,16 @@
  * @var string $webhookSecret
  * @var string $apiBaseUrl
  * @var string $webhookUrl
+ * @var string $signingBoxHeadingStored
+ * @var string $signingBoxBodyStored
+ * @var string $signingBoxCtaStored
+ * @var string $signingBoxHeadingDefault
+ * @var string $signingBoxBodyDefault
+ * @var string $signingBoxCtaDefault
+ * @var string $signingBoxColorFromStored
+ * @var string $signingBoxColorToStored
+ * @var string $signingBoxColorFromDefault
+ * @var string $signingBoxColorToDefault
  */
 
 if (! defined('ABSPATH')) {
@@ -67,6 +77,90 @@ if (! defined('ABSPATH')) {
                 <td>
                     <code style="background:#f0f0f1;padding:6px 8px;display:inline-block"><?php echo esc_html($webhookUrl); ?></code>
                     <p class="description"><?php esc_html_e('Copiază în Zapis: Settings → Integrations → Webhook endpoints → URL. Eveniment: contract.signed.', 'zapis-woocommerce'); ?></p>
+                </td>
+            </tr>
+        </table>
+
+        <h2><?php esc_html_e('Box semnătură pe pagina de mulțumire', 'zapis-woocommerce'); ?></h2>
+        <p class="description" style="max-width:720px">
+            <?php esc_html_e('Personalizează titlul, textul și butonul afișat clientului după plată, când îl invităm să semneze contractul. Lasă câmpurile goale pentru a folosi textele implicite.', 'zapis-woocommerce'); ?>
+        </p>
+        <table class="form-table" role="presentation">
+            <tr>
+                <th scope="row">
+                    <label for="zapis_wc_signing_box_heading"><?php esc_html_e('Titlu', 'zapis-woocommerce'); ?></label>
+                </th>
+                <td>
+                    <input type="text" id="zapis_wc_signing_box_heading"
+                           name="<?php echo esc_attr(\Zapis\WooCommerce\Settings::OPTION_SIGNING_BOX_HEADING); ?>"
+                           value="<?php echo esc_attr($signingBoxHeadingStored); ?>"
+                           class="regular-text"
+                           placeholder="<?php echo esc_attr($signingBoxHeadingDefault); ?>">
+                    <p class="description"><?php esc_html_e('Apare în partea de sus a box-ului. Default:', 'zapis-woocommerce'); ?> <em><?php echo esc_html($signingBoxHeadingDefault); ?></em></p>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">
+                    <label for="zapis_wc_signing_box_body"><?php esc_html_e('Text body', 'zapis-woocommerce'); ?></label>
+                </th>
+                <td>
+                    <?php
+                    $editorValue = $signingBoxBodyStored !== '' ? $signingBoxBodyStored : $signingBoxBodyDefault;
+                    wp_editor(
+                        $editorValue,
+                        'zapis_wc_signing_box_body',
+                        [
+                            'textarea_name' => \Zapis\WooCommerce\Settings::OPTION_SIGNING_BOX_BODY,
+                            'textarea_rows' => 5,
+                            'media_buttons' => false,
+                            'tinymce' => [
+                                'toolbar1' => 'bold,italic,underline,link,unlink,bullist,numlist,undo,redo',
+                                'toolbar2' => '',
+                            ],
+                            'quicktags' => true,
+                        ]
+                    );
+                    ?>
+                    <p class="description"><?php esc_html_e('Formatare permisă: bold, italic, link-uri, liste. Lasă gol pentru textul implicit.', 'zapis-woocommerce'); ?></p>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">
+                    <label for="zapis_wc_signing_box_cta"><?php esc_html_e('Text buton', 'zapis-woocommerce'); ?></label>
+                </th>
+                <td>
+                    <input type="text" id="zapis_wc_signing_box_cta"
+                           name="<?php echo esc_attr(\Zapis\WooCommerce\Settings::OPTION_SIGNING_BOX_CTA); ?>"
+                           value="<?php echo esc_attr($signingBoxCtaStored); ?>"
+                           class="regular-text"
+                           placeholder="<?php echo esc_attr($signingBoxCtaDefault); ?>">
+                    <p class="description"><?php esc_html_e('Default:', 'zapis-woocommerce'); ?> <em><?php echo esc_html($signingBoxCtaDefault); ?></em></p>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">
+                    <label for="zapis_wc_signing_box_color_from"><?php esc_html_e('Culoare gradient — start', 'zapis-woocommerce'); ?></label>
+                </th>
+                <td>
+                    <input type="text" id="zapis_wc_signing_box_color_from"
+                           name="<?php echo esc_attr(\Zapis\WooCommerce\Settings::OPTION_SIGNING_BOX_COLOR_FROM); ?>"
+                           value="<?php echo esc_attr($signingBoxColorFromStored); ?>"
+                           class="zapis-color-picker"
+                           data-default-color="<?php echo esc_attr($signingBoxColorFromDefault); ?>">
+                    <p class="description"><?php esc_html_e('Culoarea din stânga-sus a gradientului. Folosită și pentru textul butonului. Default:', 'zapis-woocommerce'); ?> <code><?php echo esc_html($signingBoxColorFromDefault); ?></code></p>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">
+                    <label for="zapis_wc_signing_box_color_to"><?php esc_html_e('Culoare gradient — final', 'zapis-woocommerce'); ?></label>
+                </th>
+                <td>
+                    <input type="text" id="zapis_wc_signing_box_color_to"
+                           name="<?php echo esc_attr(\Zapis\WooCommerce\Settings::OPTION_SIGNING_BOX_COLOR_TO); ?>"
+                           value="<?php echo esc_attr($signingBoxColorToStored); ?>"
+                           class="zapis-color-picker"
+                           data-default-color="<?php echo esc_attr($signingBoxColorToDefault); ?>">
+                    <p class="description"><?php esc_html_e('Culoarea din dreapta-jos a gradientului. Default:', 'zapis-woocommerce'); ?> <code><?php echo esc_html($signingBoxColorToDefault); ?></code></p>
                 </td>
             </tr>
         </table>

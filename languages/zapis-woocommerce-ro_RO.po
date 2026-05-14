@@ -109,3 +109,45 @@ msgstr "UUID ofertă Zapis"
 
 msgid "Optional: override the default Zapis offer UUID for this product. Leave empty to use the global default."
 msgstr "Opțional: înlocuiește UUID-ul ofertei Zapis pentru acest produs. Lasă gol pentru a folosi default-ul global."
+
+msgid "<p>To complete your order we need your electronic signature on the contract. It takes under a minute.</p>"
+msgstr "<p>Pentru a finaliza comanda avem nevoie de semnătura ta electronică pe contract. Durează sub un minut.</p>"
+
+msgid "Secured by Zapis"
+msgstr "Securizat de Zapis"
+
+msgid "Box semnătură pe pagina de mulțumire"
+msgstr "Box semnătură pe pagina de mulțumire"
+
+msgid "Personalizează titlul, textul și butonul afișat clientului după plată, când îl invităm să semneze contractul. Lasă câmpurile goale pentru a folosi textele implicite."
+msgstr "Personalizează titlul, textul și butonul afișat clientului după plată, când îl invităm să semneze contractul. Lasă câmpurile goale pentru a folosi textele implicite."
+
+msgid "Titlu"
+msgstr "Titlu"
+
+msgid "Apare în partea de sus a box-ului. Default:"
+msgstr "Apare în partea de sus a box-ului. Default:"
+
+msgid "Text body"
+msgstr "Text body"
+
+msgid "Formatare permisă: bold, italic, link-uri, liste. Lasă gol pentru textul implicit."
+msgstr "Formatare permisă: bold, italic, link-uri, liste. Lasă gol pentru textul implicit."
+
+msgid "Text buton"
+msgstr "Text buton"
+
+msgid "Default:"
+msgstr "Default:"
+
+msgid "Culoare gradient — start"
+msgstr "Culoare gradient — start"
+
+msgid "Culoarea din stânga-sus a gradientului. Folosită și pentru textul butonului. Default:"
+msgstr "Culoarea din stânga-sus a gradientului. Folosită și pentru textul butonului. Default:"
+
+msgid "Culoare gradient — final"
+msgstr "Culoare gradient — final"
+
+msgid "Culoarea din dreapta-jos a gradientului. Default:"
+msgstr "Culoarea din dreapta-jos a gradientului. Default:"
